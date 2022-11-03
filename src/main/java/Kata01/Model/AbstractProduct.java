@@ -5,12 +5,28 @@ import com.sun.istack.NotNull;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @MappedSuperclass
 public class AbstractProduct {
 
     @NotNull
     private String prodcutName;
+
+    @NotNull
+    private String productBrand;
+
+    @NotNull
+    private LocalDate dateOfArrive;
+
+    @NotNull
+    private Integer stock;
+
+    @NotNull
+    private Integer minStock;
+
+    @NotNull
+    private Integer maxStock;
 
     @Embedded
     @Nullable
@@ -28,6 +44,46 @@ public class AbstractProduct {
 
     public void setProdcutName(String prodcutName) {
         this.prodcutName = prodcutName;
+    }
+
+    public String getProductBrand() {
+        return productBrand;
+    }
+
+    public void setProductBrand(String productBrand) {
+        this.productBrand = productBrand;
+    }
+
+    public LocalDate getDateOfArrive() {
+        return dateOfArrive;
+    }
+
+    public void setDateOfArrive(LocalDate dateOfArrive) {
+        this.dateOfArrive = dateOfArrive;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Integer getMinStock() {
+        return minStock;
+    }
+
+    public void setMinStock(Integer minStock) {
+        this.minStock = minStock;
+    }
+
+    public Integer getMaxStock() {
+        return maxStock;
+    }
+
+    public void setMaxStock(Integer maxStock) {
+        this.maxStock = maxStock;
     }
 
     @Nullable
